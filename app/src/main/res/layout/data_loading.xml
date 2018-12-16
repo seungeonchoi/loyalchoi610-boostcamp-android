@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+>
+<RelativeLayout
+                android:id="@+id/loading_frame_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#ffffff">
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_centerInParent="true" android:gravity="center" android:orientation="horizontal"
+                    >
+        <ImageView android:id="@+id/iv_frame_loading" android:layout_width="60dp" android:layout_height="60dp"
+                   />
+        <TextView android:id="@+id/tv_progress_message" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:text="잠시만요..  "
+                  android:textAppearance="?android:attr/textAppearanceLarge" android:textColor="#000000"/>
+    </LinearLayout>
+</RelativeLayout>
+</layout>

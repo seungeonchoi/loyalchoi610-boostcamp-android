@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+>
+    <data>
+
+        <variable
+                name="movie"
+                type="com.example.chou6.moviesearch.model.MovieModel"/>
+    </data>
+<LinearLayout
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/layout"
+>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="2"
+    >
+            <ImageView android:layout_width="match_parent"
+                       android:layout_height="150dp"
+                       android:id="@+id/image"
+                       android:scaleType="fitStart"
+            />
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+    >
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="@{movie.title}"
+                android:id="@+id/title"
+                android:textColor="#333333"
+                />
+        <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/ratingbar"
+                android:numStars="5"
+                android:rating="@{movie.rating}"
+                android:isIndicator="true"
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@{movie.year}"
+                android:id="@+id/year" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@{movie.director}"
+
+                android:id="@+id/director" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@{movie.actor}"
+                android:id="@+id/actor" />
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>
