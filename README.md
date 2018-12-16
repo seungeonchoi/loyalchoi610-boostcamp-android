@@ -8,9 +8,9 @@ Seung-Eon Choi(최승언)
 Android Studio 3.2.1
 
 ## References
-https://github.com/tutsplus/Android-ModelViewPresenter-Example
-https://medium.com/@jsuch2362/adapter-what-role-is-it-data-view-13c713cdae0b
-https://howtoprogram.xyz/2017/02/07/how-to-create-observable-in-rxjava-2/
-https://medium.com/3xplore/handling-api-calls-using-retrofit-2-and-rxjava-2-1871c891b6ae
-http://gun0912.tistory.com/72
+https://github.com/tutsplus/Android-ModelViewPresenter-Example<br />
+https://medium.com/@jsuch2362/adapter-what-role-is-it-data-view-13c713cdae0b<br />
+https://howtoprogram.xyz/2017/02/07/how-to-create-observable-in-rxjava-2/<br />
+https://medium.com/3xplore/handling-api-calls-using-retrofit-2-and-rxjava-2-1871c891b6ae<br />
+http://gun0912.tistory.com/72<br />
 
