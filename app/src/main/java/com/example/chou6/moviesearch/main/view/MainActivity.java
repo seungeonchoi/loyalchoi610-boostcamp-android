@@ -8,8 +8,10 @@ import android.support.v7.app.AppCompatDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.chou6.moviesearch.*;
@@ -138,6 +140,12 @@ public class MainActivity extends AppCompatActivity implements MVP_Main.Required
             progressDialog = null;
 
         }
+
+    }
+    public void makeToast(String message){
+        Toast toast = Toast.makeText(getApplicationContext(),
+                message, Toast.LENGTH_LONG);
+        toast.show();
 
     }
 

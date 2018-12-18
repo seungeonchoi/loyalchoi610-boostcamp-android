@@ -21,6 +21,7 @@ public interface MVP_Main {
             void notifyItemRangeInserted(int newindex, int i);
             void showDialog();
             void hideDialog();
+            void makeToast(String message);
 
         }
 

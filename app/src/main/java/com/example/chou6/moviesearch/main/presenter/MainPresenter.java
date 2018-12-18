@@ -62,8 +62,10 @@ public class MainPresenter implements MVP_Main.ProvidedPresenter, MVP_Main.Requi
 
     @Override
     public void search(String query) {
-        if(aModel.isLoading())
+        if(aModel.isLoading()){
+            mView.makeToast("로딩 중입니다. 잠시후 다시 시도해주세요.");
             return;
+        }
         aModel.setLoading(true);
         mView.showDialog();
         aModel.setMoreDataAvailable(false);
@@ -73,8 +75,12 @@ public class MainPresenter implements MVP_Main.ProvidedPresenter, MVP_Main.Requi
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(json->{
-
                     refreshView(json);
+
+                },it->{
+                    mView.makeToast("네트워크에 연결할 수 없습니다.");
+                    mView.hideDialog();
+                    aModel.setLoading(false);
                 });
         compositeDisposable.add(response);
     }
@@ -90,6 +96,10 @@ public class MainPresenter implements MVP_Main.ProvidedPresenter, MVP_Main.Requi
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(json->{
                     updateView(json);
+                },it->{
+                    mView.makeToast("네트워크에 연결할 수 없습니다.");
+                    aModel.setLoading(false);
+
                 });
         compositeDisposable.add(response);
 
@@ -158,6 +168,8 @@ public class MainPresenter implements MVP_Main.ProvidedPresenter, MVP_Main.Requi
             aModel.addMovie(new MovieModel(mi));
         }
         aModel.setTotal(Integer.parseInt(json.total));
+        if(json.total.equals("0"))
+            mView.makeToast("검색 결과가 없습니다.");
         aModel.setLoadThreshold(aModel.getItemCount());
         if(aModel.hasMoreData()){
             aModel.setMoreDataAvailable(true);
